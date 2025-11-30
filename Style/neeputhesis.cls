@@ -738,7 +738,7 @@
             \parindent \z@ \rightskip \@pnumwidth
             \parfillskip -\@pnumwidth
             {\leavevmode
-            \zihao{4}\sffamily #1
+            \zihao{-4}\sffamily #1
             \leaders\hbox{$\m@th\mkern \@dotsep \cdot\mkern \@dotsep$}% add dotted toc line
             \hfil \hb@xt@\@pnumwidth{\hss #2}}\par
             \nobreak
@@ -756,7 +756,7 @@
         \begingroup
             \parindent \z@ \rightskip \@pnumwidth
             \parfillskip -\@pnumwidth
-            \leavevmode \zihao{4}\sffamily
+            \leavevmode \zihao{-4}\sffamily
             \advance\leftskip\@tempdima
             \hskip -\leftskip
             #1\nobreak
@@ -774,6 +774,23 @@
 \renewcommand*\l@subparagraph{\@dottedtocline{5}{5em}{5.8em}}
 \renewcommand*\l@figure{\@dottedtocline{1}{1em}{1.8em}}
 \renewcommand*\l@table{\@dottedtocline{1}{1em}{1.8em}}
+
+
+%----------------------------------------
+% Force Songti font for TOC entries
+%----------------------------------------
+\renewcommand*\l@section[2]{%
+  \@dottedtocline{1}{1em}{1.8em}{\songti #1}{#2}%
+}
+
+\renewcommand*\l@subsection[2]{%
+  \@dottedtocline{2}{2em}{2.8em}{\songti #1}{#2}%
+}
+
+\renewcommand*\l@subsubsection[2]{%
+  \@dottedtocline{3}{3em}{3.8em}{\songti #1}{#2}%
+}
+
 %---------------------------------------------------------------------------%
 \endinput
 
